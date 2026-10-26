@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('welcome'){
+            steps{
+                echo 'Hello from jenkins!'
+                echo 'This is my first CI/CD pipeline'
+            }
+        }
+        stage('Check Docker'){
+            steps{
+                sh 'docker --version'
+                sh 'docker ps'
+            }
+        }
+    }
+}
